@@ -13,24 +13,24 @@ const usaNode = (hechos) => hechos.tecnologi.activos.includes("Node");
 
 
 
-
 const mantenimiento = (hechos) => !estaActivo(hechos) && esAltaCarga(hechos);
-const servicioCritico = (hechos) => estaActivo(hechos) && (esZona(hehcos) || esalta(hechos));
-const migraAcloudflager = (hechos) => esZona(hechos) && usaNode(hehcos) && !mantenjimiento(hehcos);
+const servicioCritico = (hechos) => estaActivo(hechos) && (esZona(hechos) || esalta(hechos));
+const migraAcloudflager = (hechos) => esZona(hechos) && usaNode(hechos) && !mantenjimiento(hechos);
 
 const criticosUs = hechos.filter(servicioCritico).map(hechos =>hechos.nombre);
 
 console.log ("Servicios criticos en US:", criticosUs); 
-console.log( criticosUs)
 
-const mantenimiento = hechos.filter(mantenimiento).map(hechos => hechos.nombre);
+
+const mantenimiento = hechos.filter(mantenimientos).map(hechos => hechos.nombre);
 console.log("Servicio en mantenimiento:", mantenimiento);
 
 
 const totalconsultas = hechos.filter(estaActivo).reduce((acum, hechos) => acum + hechos.consultasPorMinuto, 0);
 console.log("Total de consultas por minuto en servicios activos:", totalconsultas);
-console.log(totalconsultas); 
+
 
 const migraAcloudflager = hechos.filter(migraAcloudflager).map(hechos => hechos.nombre);
 console.log("servicios a migrar a cloudflager:", migraAcloudflager);
-console.log(migraAcloudflager);
+
+
