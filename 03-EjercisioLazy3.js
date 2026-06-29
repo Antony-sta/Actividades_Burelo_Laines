@@ -5,7 +5,6 @@ const logsServidor = ["200 OK", "200 OK", "500 ERROR", "200 OK", "500 ERROR", "4
 function* buscarTodosLosErrores(logs) {
 for (const logs of log){
  if(log.includes("500"));{
-
  
   yield logs;
 
